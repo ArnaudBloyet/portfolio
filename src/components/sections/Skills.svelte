@@ -42,6 +42,8 @@
     }
 
     .skills__card {
+        min-height: 210px;
+
         padding: 2rem;
 
         border: 1px solid var(--border);

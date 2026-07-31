@@ -23,121 +23,85 @@
     ];
 </script>
 
-<section class="about" id="about" data-aos="fade-up">
-    <SectionTitle>À propos</SectionTitle>
+<section id="about" class="about">
+    <div class="container">
+        <SectionTitle
+            subtitle="À propos"
+            title="Une reconversion tournée vers le développement web"
+            description="Après plusieurs années d'expérience dans différents domaines, j'ai choisi de me reconvertir dans le développement web afin de transformer ma passion pour la technologie en métier."
+        />
 
-    <div class="about__content">
-        <div class="about__text">
-            <p>
-                Après plusieurs années dans la comptabilité, j'ai décidé de me
-                reconvertir dans le développement web.
-            </p>
+        <div class="about__content">
+            <div class="about__card">
+                <h3>Mon parcours</h3>
 
-            <p>
-                Aujourd'hui, je développe des applications modernes avec
-                JavaScript, Svelte et Node.js.
-            </p>
+                <p>
+                    Curieux et passionné par l'informatique, j'ai entrepris une
+                    reconversion afin de devenir Concepteur Développeur
+                    d'Applications Web. Cette formation me permet de développer
+                    des applications modernes en JavaScript, Svelte et Node.js
+                    tout en appliquant les bonnes pratiques du développement.
+                </p>
+            </div>
 
-            <p>
-                J'aime concevoir des interfaces claires, écrire un code propre
-                et apprendre de nouvelles technologies.
-            </p>
-        </div>
+            <div class="about__card">
+                <h3>Mon objectif</h3>
 
-        <div class="timeline">
-            {#each timeline as item}
-                <div class="timeline__item">
-                    <div class="timeline__year">
-                        {item.year}
-                    </div>
-
-                    <div class="timeline__card">
-                        <h3>{item.title}</h3>
-
-                        <p>{item.description}</p>
-                    </div>
-                </div>
-            {/each}
+                <p>
+                    Je recherche un stage afin de mettre en pratique mes
+                    compétences, évoluer au sein d'une équipe de développement
+                    et continuer à apprendre au contact de développeurs
+                    expérimentés.
+                </p>
+            </div>
         </div>
     </div>
 </section>
 
 <style>
     .about {
-        padding: 7rem 1.5rem;
-
-        max-width: 1200px;
-
-        margin: auto;
+        padding: 8rem 0;
     }
 
     .about__content {
         display: grid;
 
-        grid-template-columns: 1fr 1fr;
-
-        gap: 4rem;
-
-        margin-top: 4rem;
-    }
-
-    .about__text {
-        display: flex;
-
-        flex-direction: column;
-
-        gap: 1.5rem;
-
-        font-size: 1.1rem;
-
-        line-height: 1.9;
-
-        color: var(--text-light);
-    }
-
-    .timeline {
-        display: flex;
-
-        flex-direction: column;
+        grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
 
         gap: 2rem;
     }
 
-    .timeline__item {
-        display: flex;
+    .about__card {
+        padding: 2rem;
 
-        gap: 1rem;
+        border: 1px solid var(--border);
 
-        align-items: flex-start;
-    }
+        border-radius: 24px;
 
-    .timeline__year {
-        min-width: 70px;
-
-        font-weight: 700;
-
-        color: var(--primary);
-    }
-
-    .timeline__card {
         background: var(--surface);
-
-        padding: 1.5rem;
-
-        border-radius: 18px;
 
         box-shadow: var(--shadow-sm);
 
-        flex: 1;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
     }
 
-    .timeline__card h3 {
-        margin-bottom: 0.75rem;
+    .about__card:hover {
+        transform: translateY(-6px);
+
+        box-shadow: var(--shadow-md);
     }
 
-    @media (max-width: 900px) {
-        .about__content {
-            grid-template-columns: 1fr;
-        }
+    .about__card h3 {
+        margin-bottom: 1rem;
+
+        font-size: 1.5rem;
+    }
+
+    .about__card p {
+        color: var(--text-light);
+
+        line-height: 1.8;
     }
 </style>
