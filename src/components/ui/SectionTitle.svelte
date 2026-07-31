@@ -16,9 +16,9 @@
 
 <style>
     .section-title {
-        max-width: 700px;
+        max-width: 760px;
 
-        margin: 0 auto 4rem;
+        margin: 0 auto 5rem;
 
         text-align: center;
     }
@@ -34,7 +34,9 @@
     }
 
     .section-title h2 {
-        font-size: clamp(2.2rem, 5vw, 3rem);
+        font-size: clamp(2.4rem, 5vw, 3.4rem);
+
+        line-height: 1.05;
 
         margin-bottom: 1rem;
     }
@@ -42,6 +44,8 @@
     .section-title p {
         color: var(--text-light);
 
-        line-height: 1.8;
+        font-size: 1.1rem;
+
+        line-height: 1.9;
     }
 </style>

@@ -46,7 +46,7 @@
 
 <style>
     .hero {
-        padding: 5rem 0 6rem;
+        padding: 8rem 0;
     }
 
     .hero__container {
