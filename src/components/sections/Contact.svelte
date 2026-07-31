@@ -84,4 +84,10 @@
     .contact__card p {
         color: var(--text-light);
     }
+
+    @media (max-width: 768px) {
+        .contact__grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

@@ -37,6 +37,6 @@ section {
 }
 
 .container {
-    width: min(90%, var(--container));
-    margin-inline: auto;
+    width:min(1120px, calc(100% - 2rem));
+    margin:0 auto;
 }

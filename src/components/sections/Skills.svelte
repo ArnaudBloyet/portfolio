@@ -79,4 +79,10 @@
 
         gap: 0.75rem;
     }
+
+    @media (max-width: 768px) {
+        .skills__grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

@@ -38,6 +38,8 @@
         top: 0;
         z-index: 1000;
 
+        flex-wrap: wrap;
+
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
 
@@ -46,6 +48,20 @@
         box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
 
         border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+    }
+
+    @media (max-width: 768px) {
+        .navbar {
+            padding: 1rem 0;
+        }
+
+        .navbar__links {
+            gap: 1rem;
+
+            flex-wrap: wrap;
+
+            justify-content: center;
+        }
     }
 
     .navbar__content {

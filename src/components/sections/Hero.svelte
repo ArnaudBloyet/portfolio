@@ -133,4 +133,20 @@
 
         margin-top: 4.5rem;
     }
+
+    @media (max-width: 768px) {
+        .hero {
+            padding-top: 8rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 10vw, 4rem);
+        }
+
+        .hero__buttons {
+            flex-direction: column;
+
+            align-items: center;
+        }
+    }
 </style>

@@ -105,4 +105,10 @@
 
         line-height: 1.8;
     }
+
+    @media (max-width: 768px) {
+        .about__content {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>

@@ -102,4 +102,14 @@
 
         line-height: 1.8;
     }
+
+    @media (max-width: 768px) {
+        .journey__card {
+            padding-left: 2rem;
+        }
+
+        .journey__card::before {
+            left: 0.8rem;
+        }
+    }
 </style>

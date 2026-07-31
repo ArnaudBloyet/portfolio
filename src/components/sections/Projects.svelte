@@ -35,4 +35,10 @@
 
         align-items: stretch;
     }
+
+    @media (max-width: 768px) {
+        .projects__grid {
+            grid-template-columns: 1fr;
+        }
+    }
 </style>
