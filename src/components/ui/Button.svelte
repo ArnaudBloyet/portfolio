@@ -3,74 +3,69 @@
         href = "#",
         variant = "primary",
         target = "_self",
-        children
+        children,
     } = $props();
 </script>
 
-<a
-    href={href}
-    target={target}
-    class={`button ${variant}`}
->
+<a {href} {target} class={`button ${variant}`}>
     {@render children?.()}
 </a>
 
 <style>
+    .button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
 
-.button {
+        padding: 1rem 1.8rem;
 
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+        border-radius: 999px;
 
-    padding: 1rem 1.8rem;
+        text-decoration: none;
 
-    border-radius: 14px;
+        font-weight: 600;
 
-    text-decoration: none;
+        transition:
+            background-color var(--transition),
+            color var(--transition),
+            transform var(--transition),
+            box-shadow var(--transition);
 
-    font-weight: 600;
+        cursor: pointer;
+    }
 
-    transition: all .25s ease;
+    .button:focus-visible {
+        outline: 3px solid rgba(37, 99, 235, 0.3);
+        outline-offset: 4px;
+    }
 
-    cursor: pointer;
+    .primary {
+        background: var(--primary);
 
-}
+        color: white;
 
-.primary {
+        box-shadow: var(--shadow-sm);
+    }
 
-    background: var(--primary);
+    .primary:hover {
+        transform: translateY(-2px);
 
-    color: white;
+        box-shadow: var(--shadow-md);
+    }
 
-}
+    .secondary {
+        border: 2px solid var(--primary);
 
-.primary:hover {
+        color: var(--primary);
 
-    transform: translateY(-4px);
+        background: white;
+    }
 
-    box-shadow: var(--shadow-md);
+    .secondary:hover {
+        background: var(--primary);
 
-}
+        color: white;
 
-.secondary {
-
-    border: 2px solid var(--primary);
-
-    color: var(--primary);
-
-    background: white;
-
-}
-
-.secondary:hover {
-
-    background: var(--primary);
-
-    color: white;
-
-    transform: translateY(-4px);
-
-}
-
+        transform: translateY(-2px);
+    }
 </style>
