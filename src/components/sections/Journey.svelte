@@ -131,7 +131,7 @@
 
     margin-left:3rem;
 
-    background:white;
+    background:var(--surface);
 
     padding:1.5rem;
 
@@ -157,7 +157,7 @@
 
 .timeline__content p{
 
-    color:#64748b;
+    color:var(--text-light);
 
     line-height:1.7;
 

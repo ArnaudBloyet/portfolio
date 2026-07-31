@@ -76,7 +76,7 @@
 
     margin:2rem auto 4rem;
 
-    color:#64748b;
+    color:var(--text-light);
 
     line-height:1.8;
 
@@ -104,9 +104,9 @@
 
     padding:1.5rem;
 
-    background:white;
+    background:var(--surface);
 
-    border-radius:20px;
+    border-radius:var(--radius);
 
     text-decoration:none;
 
@@ -140,7 +140,7 @@
 
 .contact__card p{
 
-    color:#64748b;
+    color:var(--text-light);
 
 }
 

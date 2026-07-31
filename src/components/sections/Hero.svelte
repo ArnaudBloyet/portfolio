@@ -102,7 +102,7 @@ p{
 
     line-height:1.8;
 
-    color:#64748b;
+    color:var(--text-light);
 
 }
 

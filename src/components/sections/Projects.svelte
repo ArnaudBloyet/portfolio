@@ -132,9 +132,9 @@
 
 .project-card{
 
-    background:white;
+    background:var(--surface);
 
-    border-radius:20px;
+    border-radius:var(--radius);
 
     overflow:hidden;
 
@@ -176,7 +176,7 @@
 
 .project-card p{
 
-    color:#64748b;
+    color:var(--text-light);
 
     line-height:1.7;
 

@@ -89,9 +89,9 @@
 
 .skill-card{
 
-    background:white;
+    background:var(--surface);
 
-    border-radius:20px;
+    border-radius:var(--radius);
 
     padding:2rem;
 
@@ -125,7 +125,7 @@
 
 .skill-card p{
 
-    color:#64748b;
+    color:var(--text-light);
 
     line-height:1.7;
 

@@ -60,7 +60,7 @@
 
 .footer p{
 
-    color:#64748b;
+    color:var(--text-light);
 
 }
 
@@ -74,7 +74,7 @@
 
 .footer__links a{
 
-    color:#64748b;
+    color:var(--text-light);
 
     text-decoration:none;
 
