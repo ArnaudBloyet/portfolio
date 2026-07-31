@@ -58,7 +58,7 @@
 
         color: var(--primary);
 
-        background:var(--surface);
+        background: var(--surface);
     }
 
     .secondary:hover {

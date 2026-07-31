@@ -4,120 +4,132 @@
     import Terminal from "../ui/Terminal.svelte";
 </script>
 
-<section class="hero" id="hero" data-aos="fade-up">
+<section class="hero">
+    <div class="container hero__container">
+        <Badge text="Disponible pour un stage" icon="✨" variant="primary" />
 
-    <Badge />
+        <h1>
+            Concepteur Développeur<br />
+            d'Applications Web
+        </h1>
 
-    <h1>
-        Bonjour 👋 <br>
-        <span>ARNAUD BLOYET</span>
-    </h1>
+        <p class="hero__description">
+            Je développe des applications web modernes, performantes et
+            intuitives avec <strong>JavaScript</strong>, <strong>Svelte</strong>
+            et
+            <strong>Node.js</strong>.
+        </p>
 
-    <h2>
-        Concepteur Développeur<br>
-        d'Applications
-    </h2>
+        <div class="hero__actions">
+            <Button href="#projects">Découvrir mes projets</Button>
 
-    <p>
-        Je développe des applications web modernes,
-        performantes et intuitives avec JavaScript,
-        Svelte et Node.js.
-    </p>
+            <Button href="/cv.pdf" variant="secondary" target="_blank">
+                Télécharger mon CV
+            </Button>
+        </div>
 
-    <div class="hero__buttons">
+        <div class="hero__stack">
+            JavaScript
+            <span>•</span>
+            Svelte
+            <span>•</span>
+            Node.js
+            <span>•</span>
+            Git
+        </div>
 
-        <Button
-            href="#projects"
-            variant="primary">
-
-            Voir mes projets
-
-        </Button>
-
-        <Button
-            href="/cv.pdf"
-            variant="secondary">
-
-            Télécharger mon CV
-
-        </Button>
-
+        <div class="hero__terminal">
+            <Terminal />
+        </div>
     </div>
-
-    <Terminal />
-
 </section>
 
 <style>
+    .hero {
+        padding: 5rem 0 6rem;
+    }
 
-.hero{
+    .hero__container {
+        max-width: 760px;
 
-    max-width:900px;
+        margin: auto;
 
-    margin:0 auto;
+        text-align: center;
 
-    padding:8rem 1.5rem 6rem;
+        display: flex;
 
-    text-align:center;
+        flex-direction: column;
 
-}
+        align-items: center;
+    }
 
-h1{
+    .hero h1 {
+        margin-top: 2rem;
 
-    margin-top:2rem;
+        font-size: clamp(3rem, 7vw, 5rem);
 
-    font-size:clamp(3rem,7vw,5rem);
+        line-height: 1.06;
 
-    line-height:1.1;
+        letter-spacing: -0.05em;
 
-    font-weight:800;
+        font-weight: 800;
+    }
 
-}
+    .hero__description {
+        margin-top: 2rem;
 
-h1 span{
+        max-width: 650px;
 
-    color:var(--primary);
+        font-size: 1.2rem;
 
-}
+        color: var(--text-light);
+    }
 
-h2{
+    .hero__description strong {
+        color: var(--text);
+    }
 
-    margin-top:1rem;
+    .hero__stack {
+        margin-top: 2rem;
 
-    font-size:clamp(1.5rem,3vw,2.2rem);
+        display: flex;
 
-    color:#475569;
+        gap: 0.8rem;
 
-    font-weight:600;
+        flex-wrap: wrap;
 
-}
+        justify-content: center;
 
-p{
+        color: var(--text-light);
 
-    max-width:650px;
+        font-weight: 500;
+    }
 
-    margin:2rem auto;
+    .hero__stack span {
+        color: var(--border);
+    }
 
-    font-size:1.15rem;
+    .hero__actions {
+        margin-top: 3rem;
 
-    line-height:1.8;
+        display: flex;
 
-    color:var(--text-light);
+        gap: 1rem;
 
-}
+        flex-wrap: wrap;
 
-.hero__buttons{
+        justify-content: center;
+    }
 
-    display:flex;
+    .hero__actions :global(.button) {
+        min-width: 240px;
+    }
 
-    justify-content:center;
+    .hero__terminal {
+        width: 100%;
 
-    gap:1rem;
+        max-width: 760px;
 
-    flex-wrap:wrap;
-
-    margin-bottom:4rem;
-
-}
-
+        margin-top: 4.5rem;
+    }
 </style>

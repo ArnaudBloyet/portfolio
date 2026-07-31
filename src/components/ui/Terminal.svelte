@@ -65,6 +65,8 @@
         overflow: hidden;
 
         box-shadow: var(--shadow-md);
+
+        max-width:760px;
     }
 
     .terminal__header {

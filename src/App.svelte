@@ -13,9 +13,9 @@
 
 <main>
   <Hero />
-  <About />
-  <Skills />
   <Projects />
+  <Skills />
+  <About />
   <Journey />
   <Contact />
 </main>

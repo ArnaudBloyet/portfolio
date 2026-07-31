@@ -1,9 +1,12 @@
 <script>
-  let { text = "Disponible pour un stage" } = $props();
+  let { text = "", icon = "✨", variant = "primary" } = $props();
 </script>
 
-<div class="badge">
-  <span class="badge__icon"> ✨ </span>
+<div class="badge badge--{variant}">
+  {#if icon}
+    <span>{icon}</span>
+  {/if}
+
   <span>{text}</span>
 </div>
 
@@ -13,7 +16,7 @@
     align-items: center;
     gap: 0.5rem;
 
-    padding: 0.55rem 1rem;
+    padding: 0.35rem 0.8rem;
 
     border-radius: 999px;
 
@@ -23,7 +26,7 @@
 
     color: var(--primary);
 
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 
     font-weight: 600;
 
@@ -39,5 +42,20 @@
 
   .badge__icon {
     font-size: 0.9rem;
+  }
+
+  .badge--primary {
+    background: #eef4ff;
+    color: var(--primary);
+  }
+
+  .badge--technology {
+    background: #f8fafc;
+    color: var(--text-light);
+  }
+
+  .badge--success {
+    background: #ecfdf3;
+    color: #15803d;
   }
 </style>

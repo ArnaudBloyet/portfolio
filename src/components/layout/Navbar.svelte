@@ -12,7 +12,7 @@
 
 <nav class="navbar">
     <div class="container navbar__content">
-        <a href="#" class="navbar__logo"> AB </a>
+        <a href="#" class="navbar__logo"> AB. </a>
 
         <button
             class="navbar__toggle"
@@ -41,7 +41,9 @@
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
 
-        background: rgba(248, 250, 252, 0.75);
+        background: rgba(255, 255, 255, 0.72);
+
+        box-shadow: 0 8px 30px rgba(15, 23, 42, 0.04);
 
         border-bottom: 1px solid rgba(226, 232, 240, 0.7);
     }
@@ -57,7 +59,7 @@
     .navbar__logo {
         font-size: 1.4rem;
         font-weight: 800;
-        letter-spacing: -0.04em;
+        letter-spacing: -0.05em;
     }
 
     .navbar ul {
