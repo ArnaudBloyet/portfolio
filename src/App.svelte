@@ -11,7 +11,7 @@
 
 <Navbar />
 
-<main style="padding-top:90px;">
+<main>
   <Hero />
   <About />
   <Skills />
