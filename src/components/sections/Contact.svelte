@@ -1,153 +1,86 @@
 <script>
     import SectionTitle from "../ui/SectionTitle.svelte";
-    import Button from "../ui/Button.svelte";
+    import { socials } from "../../data/socials.js";
 </script>
 
-<section class="contact" id="contact" data-aos="fade-up">
+<section id="contact" class="contact">
+    <div class="container">
+        <SectionTitle
+            subtitle="Contact"
+            title="Travaillons ensemble"
+            description="Vous recherchez un stagiaire motivé pour rejoindre votre équipe ? N'hésitez pas à me contacter."
+        />
 
-    <SectionTitle>
-        Contact
-    </SectionTitle>
+        <div class="contact__grid">
+            {#each socials as social}
+                <article class="contact__card">
+                    <h3>{social.title}</h3>
 
-    <p class="contact__intro">
-        Je suis actuellement à la recherche d'un stage en développement web.
-        N'hésitez pas à me contacter pour échanger sur votre projet ou une opportunité.
-    </p>
-
-    <div class="contact__cards">
-
-        <a href="mailto:arnaud.bloyet@live.fr" class="contact__card">
-            <span>📧</span>
-            <div>
-                <h3>Email</h3>
-                <p>arnaud.bloyet@live.fr</p>
-            </div>
-        </a>
-
-        <a href="https://github.com/ArnaudBloyet" target="_blank" class="contact__card">
-            <span>💻</span>
-            <div>
-                <h3>GitHub</h3>
-                <p>github.com/ArnaudBloyet</p>
-            </div>
-        </a>
-
-        <a href="https://linkedin.com/in/arnaud-bloyet-716358260/" target="_blank" class="contact__card">
-            <span>💼</span>
-            <div>
-                <h3>LinkedIn</h3>
-                <p>linkedin.com/in/arnaud-bloyet-716358260/</p>
-            </div>
-        </a>
-
+                    {#if social.href}
+                        <a
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {social.value}
+                        </a>
+                    {:else}
+                        <p>{social.value}</p>
+                    {/if}
+                </article>
+            {/each}
+        </div>
     </div>
-
-    <div class="contact__button">
-
-        <Button
-            href="/cv.pdf"
-            variant="primary">
-
-            Télécharger mon CV
-
-        </Button>
-
-    </div>
-
 </section>
 
 <style>
+    .contact {
+        padding: 8rem 0;
+    }
 
-.contact{
+    .contact__grid {
+        display: grid;
 
-    max-width:1000px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 
-    margin:auto;
+        gap: 2rem;
+    }
 
-    padding:7rem 1.5rem;
+    .contact__card {
+        padding: 2rem;
 
-    text-align:center;
+        border: 1px solid var(--border);
 
-}
+        border-radius: 24px;
 
-.contact__intro{
+        background: var(--surface);
 
-    max-width:700px;
+        box-shadow: var(--shadow-sm);
 
-    margin:2rem auto 4rem;
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
 
-    color:var(--text-light);
+    .contact__card:hover {
+        transform: translateY(-6px);
 
-    line-height:1.8;
+        box-shadow: var(--shadow-md);
+    }
 
-    font-size:1.1rem;
+    .contact__card h3 {
+        margin-bottom: 1rem;
+    }
 
-}
+    .contact__card a {
+        color: var(--primary);
 
-.contact__cards{
+        text-decoration: none;
 
-    display:grid;
+        word-break: break-word;
+    }
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-
-    gap:1.5rem;
-
-}
-
-.contact__card{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:1rem;
-
-    padding:1.5rem;
-
-    background:var(--surface);
-
-    border-radius:var(--radius);
-
-    text-decoration:none;
-
-    color:inherit;
-
-    box-shadow:var(--shadow-sm);
-
-    transition:.3s;
-
-}
-
-.contact__card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:var(--shadow-md);
-
-}
-
-.contact__card span{
-
-    font-size:2rem;
-
-}
-
-.contact__card h3{
-
-    margin-bottom:.3rem;
-
-}
-
-.contact__card p{
-
-    color:var(--text-light);
-
-}
-
-.contact__button{
-
-    margin-top:4rem;
-
-}
-
+    .contact__card p {
+        color: var(--text-light);
+    }
 </style>
