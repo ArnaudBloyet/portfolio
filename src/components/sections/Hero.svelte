@@ -4,7 +4,7 @@
     import Terminal from "../ui/Terminal.svelte";
 </script>
 
-<section class="hero" id="hero">
+<section class="hero" id="hero" data-aos="fade-up">
 
     <Badge />
 

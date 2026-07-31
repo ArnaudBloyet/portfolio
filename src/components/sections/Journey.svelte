@@ -25,7 +25,7 @@
     ];
 </script>
 
-<section class="journey" id="journey">
+<section class="journey" id="journey" data-aos="fade-up">
 
     <SectionTitle>
         Mon parcours

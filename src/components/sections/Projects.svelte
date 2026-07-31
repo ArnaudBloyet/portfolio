@@ -43,7 +43,7 @@
     ];
 </script>
 
-<section class="projects" id="projects">
+<section class="projects" id="projects" data-aos="fade-up">
 
     <SectionTitle>
         Mes projets

@@ -35,7 +35,7 @@
     ];
 </script>
 
-<section class="skills" id="skills">
+<section class="skills" id="skills" data-aos="fade-up">
 
     <SectionTitle>
         Compétences

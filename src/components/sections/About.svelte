@@ -23,7 +23,7 @@
     ];
 </script>
 
-<section class="about" id="about">
+<section class="about" id="about" data-aos="fade-up">
     <SectionTitle>À propos</SectionTitle>
 
     <div class="about__content">

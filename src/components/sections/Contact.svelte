@@ -3,7 +3,7 @@
     import Button from "../ui/Button.svelte";
 </script>
 
-<section class="contact" id="contact">
+<section class="contact" id="contact" data-aos="fade-up">
 
     <SectionTitle>
         Contact
