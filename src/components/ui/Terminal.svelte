@@ -59,7 +59,7 @@
 
 .terminal__body {
     padding: 1.5rem;
-    font-family: monospace;
+    font-family:"JetBrains Mono",monospace;
     line-height: 1.8;
 }
 
