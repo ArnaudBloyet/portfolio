@@ -1,99 +1,122 @@
-<nav>
-    <div class="container">
+<script>
+    let menuOpen = false;
 
-        <a href="#hero" class="logo">
-            A.B
-        </a>
+    const links = [
+        { name: "À propos", href: "#about" },
+        { name: "Compétences", href: "#skills" },
+        { name: "Projets", href: "#projects" },
+        { name: "Parcours", href: "#journey" },
+        { name: "Contact", href: "#contact" },
+    ];
+</script>
 
-        <ul>
+<nav class="navbar">
+    <div class="container navbar__content">
+        <a href="#" class="navbar__logo"> AB </a>
 
-            <li><a href="#hero">Accueil</a></li>
+        <button
+            class="navbar__toggle"
+            on:click={() => (menuOpen = !menuOpen)}
+            aria-label="Ouvrir le menu"
+        >
+            ☰
+        </button>
 
-            <li><a href="#about">À propos</a></li>
-
-            <li><a href="#skills">Compétences</a></li>
-
-            <li><a href="#projects">Projets</a></li>
-
-            <li><a href="#contact">Contact</a></li>
-
+        <ul class:open={menuOpen}>
+            {#each links as link}
+                <li>
+                    <a href={link.href}>{link.name}</a>
+                </li>
+            {/each}
         </ul>
-
     </div>
 </nav>
 
 <style>
+    .navbar {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
 
-nav{
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
 
-    position:fixed;
+        background: rgba(248, 250, 252, 0.75);
 
-    top:0;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+    }
 
-    width:100%;
+    .navbar__content {
+        height: 72px;
 
-    backdrop-filter:blur(12px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
 
-    background:rgba(255,255,255,.75);
+    .navbar__logo {
+        font-size: 1.4rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+    }
 
-    border-bottom:1px solid #e2e8f0;
+    .navbar ul {
+        list-style: none;
 
-    z-index:1000;
+        display: flex;
+        gap: 2rem;
+    }
 
-}
+    .navbar a {
+        color: var(--text);
 
-.container{
+        font-weight: 500;
 
-    max-width:1200px;
+        transition: color var(--transition);
+    }
 
-    margin:auto;
+    .navbar a:hover {
+        color: var(--primary);
+    }
 
-    display:flex;
+    .navbar__toggle {
+        display: none;
 
-    justify-content:space-between;
+        background: none;
+        border: none;
 
-    align-items:center;
+        font-size: 1.5rem;
 
-    padding:20px;
+        cursor: pointer;
+    }
 
-}
+    @media (max-width: 768px) {
+        .navbar__toggle {
+            display: block;
+        }
 
-.logo{
+        .navbar ul {
+            display: none;
 
-    text-decoration:none;
+            position: absolute;
 
-    font-size:1.5rem;
+            top: 72px;
 
-    font-weight:700;
+            left: 0;
 
-    color:#2563eb;
+            width: 100%;
 
-}
+            padding: 2rem;
 
-ul{
+            background: white;
 
-    display:flex;
+            flex-direction: column;
 
-    gap:2rem;
+            box-shadow: var(--shadow-md);
+        }
 
-    list-style:none;
-
-}
-
-li a{
-
-    text-decoration:none;
-
-    color:#0f172a;
-
-    transition:.3s;
-
-}
-
-li a:hover{
-
-    color:#2563eb;
-
-}
-
+        .navbar ul.open {
+            display: flex;
+        }
+    }
 </style>
