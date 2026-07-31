@@ -1,166 +1,104 @@
 <script>
     import SectionTitle from "../ui/SectionTitle.svelte";
-
-    const journey = [
-        {
-            year: "2025",
-            title: "Comptable",
-            description: "Plusieurs années d'expérience en comptabilité."
-        },
-        {
-            year: "2026",
-            title: "Formation O'clock",
-            description: "Concepteur Développeur d'Applications."
-        },
-        {
-            year: "2027",
-            title: "Stage",
-            description: "Recherche d'un stage pour développer mes compétences."
-        },
-        {
-            year: "Objectif",
-            title: "Développeur Web",
-            description: "Intégrer une entreprise et continuer à progresser."
-        }
-    ];
+    import { journey } from "../../data/journey.js";
 </script>
 
-<section class="journey" id="journey" data-aos="fade-up">
+<section id="journey" class="journey">
+    <div class="container">
+        <SectionTitle
+            subtitle="Parcours"
+            title="Mon évolution"
+            description="Les principales étapes de mon parcours vers le développement web."
+        />
 
-    <SectionTitle>
-        Mon parcours
-    </SectionTitle>
-
-    <div class="timeline">
-
-        {#each journey as step}
-
-            <div class="timeline__item">
-
-                <div class="timeline__dot"></div>
-
-                <div class="timeline__content">
-
-                    <span>{step.year}</span>
+        <div class="journey__timeline">
+            {#each journey as step}
+                <article class="journey__card">
+                    <span class="journey__year">
+                        {step.year}
+                    </span>
 
                     <h3>{step.title}</h3>
 
                     <p>{step.description}</p>
-
-                </div>
-
-            </div>
-
-        {/each}
-
+                </article>
+            {/each}
+        </div>
     </div>
-
 </section>
 
 <style>
+    .journey {
+        padding: 8rem 0;
+    }
 
-.journey{
+    .journey__timeline {
+        display: grid;
 
-    max-width:900px;
+        gap: 2rem;
+    }
 
-    margin:auto;
+    .journey__card {
+        position: relative;
 
-    padding:7rem 1.5rem;
+        padding: 2rem;
 
-}
+        padding-left: 3rem;
 
-.timeline{
+        border: 1px solid var(--border);
 
-    position:relative;
+        border-radius: 24px;
 
-    margin-top:4rem;
+        background: var(--surface);
 
-    padding-left:2rem;
+        box-shadow: var(--shadow-sm);
 
-}
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
+    }
 
-.timeline::before{
+    .journey__card:hover {
+        transform: translateY(-6px);
 
-    content:"";
+        box-shadow: var(--shadow-md);
+    }
 
-    position:absolute;
+    .journey__card::before {
+        content: "";
 
-    left:11px;
+        position: absolute;
 
-    top:0;
+        left: 1.2rem;
 
-    bottom:0;
+        top: 2.2rem;
 
-    width:2px;
+        width: 12px;
 
-    background:#dbeafe;
+        height: 12px;
 
-}
+        border-radius: 50%;
 
-.timeline__item{
+        background: var(--primary);
+    }
 
-    position:relative;
+    .journey__year {
+        display: inline-block;
 
-    padding-bottom:3rem;
+        margin-bottom: 0.8rem;
 
-}
+        color: var(--primary);
 
-.timeline__dot{
+        font-weight: 700;
+    }
 
-    position:absolute;
+    .journey__card h3 {
+        margin-bottom: 1rem;
+    }
 
-    left:-2px;
+    .journey__card p {
+        color: var(--text-light);
 
-    top:8px;
-
-    width:24px;
-
-    height:24px;
-
-    border-radius:50%;
-
-    background:var(--primary);
-
-    border:5px solid white;
-
-    box-shadow:0 0 0 2px var(--primary);
-
-}
-
-.timeline__content{
-
-    margin-left:3rem;
-
-    background:var(--surface);
-
-    padding:1.5rem;
-
-    border-radius:18px;
-
-    box-shadow:var(--shadow-sm);
-
-}
-
-.timeline__content span{
-
-    color:var(--primary);
-
-    font-weight:700;
-
-}
-
-.timeline__content h3{
-
-    margin:.5rem 0;
-
-}
-
-.timeline__content p{
-
-    color:var(--text-light);
-
-    line-height:1.7;
-
-}
-
+        line-height: 1.8;
+    }
 </style>
