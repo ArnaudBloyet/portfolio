@@ -1,80 +1,170 @@
 <script>
     const lines = [
-        { command: "whoami", output: "Arnaud Bloyet" },
-        { command: "stack", output: ["JavaScript", "Svelte", "Node.js", "HTML", "CSS", "Git"] },
-        { command: "status", output: "Disponible pour un stage" }
+        {
+            command: "whoami",
+            output: ["Arnaud Bloyet"],
+        },
+        {
+            command: "role",
+            output: ["Concepteur Développeur d'Applications Web"],
+        },
+        {
+            command: "stack",
+            output: ["JavaScript", "Svelte", "Node.js", "HTML", "CSS", "Git"],
+        },
+        {
+            command: "status",
+            output: ["Disponible pour un stage"],
+        },
     ];
 </script>
 
 <div class="terminal">
     <div class="terminal__header">
-        <span></span>
-        <span></span>
-        <span></span>
+        <div class="terminal__dots">
+            <span class="red"></span>
+            <span class="yellow"></span>
+            <span class="green"></span>
+        </div>
+
+        <span class="terminal__title"> terminal </span>
     </div>
 
     <div class="terminal__body">
+        <p class="login">Last login: Today</p>
+
         {#each lines as line}
-            <p class="command">&gt; {line.command}</p>
+            <p class="command">
+                <span class="prompt"> arnaud@portfolio % </span>
 
-            {#if Array.isArray(line.output)}
-                {#each line.output as item}
-                    <p>{item}</p>
-                {/each}
-            {:else}
-                <p>{line.output}</p>
-            {/if}
+                {line.command}
+            </p>
 
-            <br>
+            {#each line.output as item}
+                <p class="output">
+                    {item}
+                </p>
+            {/each}
         {/each}
 
-        <span class="cursor">_</span>
+        <p class="cursor">
+            arnaud@portfolio %
+            <span></span>
+        </p>
     </div>
 </div>
 
 <style>
-.terminal {
-    max-width: 700px;
-    margin: 3rem auto 0;
-    background: #0f172a;
-    color: #e2e8f0;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: var(--shadow-md);
-}
+    .terminal {
+        background: var(--surface);
 
-.terminal__header {
-    display: flex;
-    gap: .5rem;
-    padding: .8rem 1rem;
-    background: #1e293b;
-}
+        border: 1px solid var(--border);
 
-.terminal__header span {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: #64748b;
-}
+        border-radius: 20px;
 
-.terminal__body {
-    padding: 1.5rem;
-    font-family:"JetBrains Mono",monospace;
-    line-height: 1.8;
-}
+        overflow: hidden;
 
-.command {
-    color: #60a5fa;
-    font-weight: bold;
-}
-
-.cursor {
-    animation: blink 1s infinite;
-}
-
-@keyframes blink {
-    50% {
-        opacity: 0;
+        box-shadow: var(--shadow-md);
     }
-}
+
+    .terminal__header {
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        padding: 0.9rem 1.2rem;
+
+        border-bottom: 1px solid var(--border);
+
+        background: rgba(248, 250, 252, 0.8);
+    }
+
+    .terminal__dots {
+        display: flex;
+
+        gap: 0.45rem;
+    }
+
+    .terminal__dots span {
+        width: 12px;
+        height: 12px;
+
+        border-radius: 50%;
+    }
+
+    .red {
+        background: #ff5f57;
+    }
+
+    .yellow {
+        background: #febc2e;
+    }
+
+    .green {
+        background: #28c840;
+    }
+
+    .terminal__title {
+        font-size: 0.85rem;
+
+        color: var(--text-light);
+    }
+
+    .terminal__body {
+        padding: 1.5rem;
+
+        font-family: "JetBrains Mono", monospace;
+
+        font-size: 0.92rem;
+
+        line-height: 1.8;
+    }
+
+    .login {
+        color: var(--text-light);
+
+        margin-bottom: 1rem;
+    }
+
+    .command {
+        margin-top: 1rem;
+    }
+
+    .prompt {
+        color: var(--primary);
+
+        font-weight: 600;
+    }
+
+    .output {
+        margin-left: 1.3rem;
+
+        color: var(--text);
+    }
+
+    .cursor {
+        margin-top: 1.5rem;
+    }
+
+    .cursor span {
+        display: inline-block;
+
+        width: 9px;
+
+        height: 18px;
+
+        background: var(--primary);
+
+        margin-left: 4px;
+
+        animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+        50% {
+            opacity: 0;
+        }
+    }
 </style>
