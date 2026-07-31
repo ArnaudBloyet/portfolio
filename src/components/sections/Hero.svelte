@@ -2,9 +2,10 @@
     import Badge from "../ui/Badge.svelte";
     import Button from "../ui/Button.svelte";
     import Terminal from "../ui/Terminal.svelte";
+    import { reveal } from "../../actions/reveal.js";
 </script>
 
-<section class="hero">
+<section use:reveal class="hero reveal">
     <div class="container hero__container">
         <Badge text="Disponible pour un stage" icon="✨" variant="primary" />
 

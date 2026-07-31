@@ -1,9 +1,10 @@
 <script>
     import SectionTitle from "../ui/SectionTitle.svelte";
     import { socials } from "../../data/socials.js";
+    import { reveal } from "../../actions/reveal.js";
 </script>
 
-<section id="contact" class="contact">
+<section use:reveal id="contact" class="contact reveal">
     <div class="container">
         <SectionTitle
             subtitle="Contact"

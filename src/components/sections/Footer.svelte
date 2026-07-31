@@ -1,4 +1,8 @@
-<footer class="footer">
+<script>
+    import { reveal } from "../../actions/reveal.js";
+</script>
+
+<footer use:reveal class="footer reveal">
 
     <div class="footer__content">
 

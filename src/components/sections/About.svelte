@@ -1,5 +1,6 @@
 <script>
     import SectionTitle from "../ui/SectionTitle.svelte";
+    import { reveal } from "../../actions/reveal.js";
 
     const timeline = [
         {
@@ -23,7 +24,7 @@
     ];
 </script>
 
-<section id="about" class="about">
+<section use:reveal id="about" class="about reveal">
     <div class="container">
         <SectionTitle
             subtitle="À propos"

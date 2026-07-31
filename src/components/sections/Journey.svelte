@@ -1,9 +1,10 @@
 <script>
     import SectionTitle from "../ui/SectionTitle.svelte";
     import { journey } from "../../data/journey.js";
+    import { reveal } from "../../actions/reveal.js";
 </script>
 
-<section id="journey" class="journey">
+<section use:reveal id="journey" class="journey reveal">
     <div class="container">
         <SectionTitle
             subtitle="Parcours"

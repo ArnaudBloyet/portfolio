@@ -2,9 +2,10 @@
     import SectionTitle from "../ui/SectionTitle.svelte";
     import Badge from "../ui/Badge.svelte";
     import { skills } from "../../data/skills.js";
+    import { reveal } from "../../actions/reveal.js";
 </script>
 
-<section id="skills" class="skills">
+<section use:reveal id="skills" class="skills reveal">
     <div class="container">
         <SectionTitle
             subtitle="Compétences"

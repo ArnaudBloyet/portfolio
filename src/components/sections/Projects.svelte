@@ -2,9 +2,10 @@
     import SectionTitle from "../ui/SectionTitle.svelte";
     import ProjectCard from "../projects/ProjectCard.svelte";
     import { projects } from "../../data/projects.js";
+    import { reveal } from "../../actions/reveal.js";
 </script>
 
-<section id="projects" class="projects">
+<section use:reveal id="projects" class="projects reveal">
     <div class="container">
         <SectionTitle
             subtitle="Portfolio"
