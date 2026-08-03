@@ -1,13 +1,14 @@
 <script>
     import Badge from "../ui/Badge.svelte";
     import Button from "../ui/Button.svelte";
+    import TechBadge from "../ui/TechBadge.svelte";
 
     let { project } = $props();
 </script>
 
 <article class="project-card">
     <div class="project-card__image">
-        <img src={project.image} alt={project.title} loading="lazy" />
+        <img src={project.image} alt={`Capture du projet ${project.title}`} />
     </div>
 
     <div class="project-card__content">
@@ -21,7 +22,7 @@
 
         <div class="project-card__technologies">
             {#each project.technologies as technology}
-                <Badge text={technology} icon="" variant="technology" />
+                <TechBadge {technology} />
             {/each}
         </div>
 
@@ -58,24 +59,30 @@
     }
 
     .project-card:hover {
-        transform: translateY(-8px);
+        transform: translateY(-8px) scale(1.01);
 
         box-shadow: var(--shadow-md);
     }
 
     .project-card__image {
-        aspect-ratio: 16/9;
-
         padding: 1rem;
 
         background: #f8fafc;
+
+        aspect-ratio: 16 / 9;
+
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
     }
 
     .project-card__image img {
         width: 100%;
         height: 100%;
 
-        object-fit: cover;
+        object-fit: contain;
 
         border-radius: 16px;
 
@@ -117,6 +124,8 @@
         color: var(--text-light);
 
         line-height: 1.7;
+
+        min-height: 5.5rem;
     }
 
     .project-card__technologies {
@@ -125,6 +134,10 @@
         flex-wrap: wrap;
 
         gap: 0.75rem;
+
+        min-height: 5rem;
+
+        align-content: flex-start;
     }
 
     .project-card__actions {

@@ -7,7 +7,7 @@
 
 <section use:reveal class="hero reveal">
     <div class="container hero__container">
-        <Badge text="Disponible pour un stage" icon="✨" variant="primary" />
+        <Badge text="Disponible pour un stage de Janvier à Février 2027" icon="✨" variant="primary" />
 
         <h1>
             Concepteur Développeur<br />

@@ -14,28 +14,34 @@
 <style>
     .button {
         display: inline-flex;
-        justify-content: center;
+
         align-items: center;
+        justify-content: center;
 
         padding: 1rem 1.8rem;
 
         border-radius: 999px;
 
+        font-weight: 600;
+
         text-decoration: none;
 
-        font-weight: 600;
+        cursor: pointer;
 
         transition:
             background-color var(--transition),
             color var(--transition),
             transform var(--transition),
             box-shadow var(--transition);
+    }
 
-        cursor: pointer;
+    .button:hover {
+        transform: translateY(-2px);
     }
 
     .button:focus-visible {
-        outline: 3px solid rgba(37, 99, 235, 0.3);
+        outline: 3px solid rgba(37, 99, 235, 0.25);
+
         outline-offset: 4px;
     }
 
@@ -48,17 +54,17 @@
     }
 
     .primary:hover {
-        transform: translateY(-2px);
+        background: var(--primary-hover);
 
         box-shadow: var(--shadow-md);
     }
 
     .secondary {
-        border: 2px solid var(--primary);
+        background: var(--surface);
 
         color: var(--primary);
 
-        background: var(--surface);
+        border: 2px solid var(--primary);
     }
 
     .secondary:hover {
@@ -66,6 +72,6 @@
 
         color: white;
 
-        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
     }
 </style>

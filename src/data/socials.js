@@ -2,21 +2,25 @@ export const socials = [
     {
         title: "Email",
         value: "arnaud.bloyet@live.fr",
-        href: "mailto:arnaud.bloyet@live.fr"
+        href: "mailto:arnaud.bloyet@live.fr",
+        icon: "mail"
     },
     {
         title: "GitHub",
-        value: "github.com/ArnaudBloyet",
-        href: "https://github.com/ArnaudBloyet"
+        value: "Découvrir mon GitHub →",
+        href: "https://github.com/ArnaudBloyet",
+        icon: "github"
     },
     {
         title: "LinkedIn",
-        value: "linkedin.com/in/arnaud-bloyet",
-        href: "https://linkedin.com/in/arnaud-bloyet-716358260/"
+        value: "Me contacter sur LinkedIn →",
+        href: "https://linkedin.com/in/arnaud-bloyet",
+        icon: "linkedin"
     },
     {
         title: "Localisation",
-        value: "Cournon d'Auvergne, France",
-        href: null
+        value: "Cournon-d'Auvergne, France",
+        href: null,
+        icon: "map-pin"
     }
 ];

@@ -7,6 +7,7 @@
   import Journey from "./components/sections/Journey.svelte";
   import Contact from "./components/sections/Contact.svelte";
   import Footer from "./components/sections/Footer.svelte";
+  import ScrollTop from "./components/ui/ScrollTop.svelte";
 </script>
 
 <Navbar />
@@ -21,3 +22,5 @@
 </main>
 
 <Footer />
+
+<ScrollTop />

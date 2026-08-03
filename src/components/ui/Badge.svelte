@@ -2,29 +2,29 @@
   let { text = "", icon = "✨", variant = "primary" } = $props();
 </script>
 
-<div class="badge badge--{variant}">
+<div class={`badge badge--${variant}`}>
   {#if icon}
-    <span>{icon}</span>
+    <span class="badge__icon">
+      {icon}
+    </span>
   {/if}
 
-  <span>{text}</span>
+  <span>
+    {text}
+  </span>
 </div>
 
 <style>
   .badge {
     display: inline-flex;
+
     align-items: center;
+
     gap: 0.5rem;
 
     padding: 0.35rem 0.8rem;
 
     border-radius: 999px;
-
-    background: rgba(37, 99, 235, 0.08);
-
-    border: 1px solid rgba(37, 99, 235, 0.15);
-
-    color: var(--primary);
 
     font-size: 0.8rem;
 
@@ -46,16 +46,25 @@
 
   .badge--primary {
     background: #eef4ff;
+
+    border: 1px solid rgba(37, 99, 235, 0.15);
+
     color: var(--primary);
   }
 
   .badge--technology {
     background: #f8fafc;
+
+    border: 1px solid var(--border);
+
     color: var(--text-light);
   }
 
   .badge--success {
     background: #ecfdf3;
+
+    border: 1px solid rgba(21, 128, 61, 0.15);
+
     color: #15803d;
   }
 </style>

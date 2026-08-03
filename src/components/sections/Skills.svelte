@@ -1,6 +1,7 @@
 <script>
     import SectionTitle from "../ui/SectionTitle.svelte";
     import Badge from "../ui/Badge.svelte";
+    import TechBadge from "../ui/TechBadge.svelte";
     import { skills } from "../../data/skills.js";
     import { reveal } from "../../actions/reveal.js";
 </script>
@@ -20,7 +21,7 @@
 
                     <div class="skills__badges">
                         {#each skill.items as item}
-                            <Badge text={item} icon="" />
+                            <TechBadge technology={item} />
                         {/each}
                     </div>
                 </article>
