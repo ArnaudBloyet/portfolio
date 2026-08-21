@@ -22,8 +22,7 @@ export const projects = [
       "API REST développée avec Node.js et Express permettant d'obtenir les informations des capitales du monde via plusieurs routes personnalisées.",
     image: capitales,
     technologies: ["Node.js", "Express"],
-    github:
-      "https://github.com/O-clock-Lisbonne/SB01E03_worldtime-ArnaudBloyet",
+    github: "https://github.com/ArnaudBloyet/worldtime-projet-ArnaudBloyet",
     demo: "",
     status: "Terminé",
   },
