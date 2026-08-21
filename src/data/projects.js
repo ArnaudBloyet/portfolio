@@ -34,8 +34,7 @@ export const projects = [
       "Intégration d'une landing page moderne à partir d'une maquette, avec une attention particulière portée au responsive design, aux animations CSS, aux effets de survol et à la qualité de l'intégration HTML/CSS.",
     image: heroes,
     technologies: ["HTML5", "CSS3", "Responsive Design"],
-    github:
-      "https://github.com/O-clock-Lisbonne/SA03E04-bonus-heroes-league-ArnaudBloyet",
+    github: "https://github.com/ArnaudBloyet/heroes-league-projet-ArnaudBloyet",
     demo: "",
     status: "Terminé",
   },
